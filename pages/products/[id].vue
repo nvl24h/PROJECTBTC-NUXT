@@ -55,7 +55,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Giống nho: <br /><span class="text-primary-btc">{{ productData.product_attributes.type }}</span>
                                     </p>
@@ -64,7 +64,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Dung tích: <br /><span class="text-primary-btc">{{ productData.product_attributes.size }}</span>
                                     </p>
@@ -73,7 +73,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Vùng: <br /><span class="text-primary-btc">{{ productData.product_attributes.region }}</span>
                                     </p>
@@ -82,7 +82,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Niên vụ: <br /><span class="text-primary-btc">{{ productData.product_attributes.current_vintage }}</span>
                                     </p>
@@ -91,7 +91,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Nồng độ: <br /><span class="text-primary-btc">{{ productData.product_attributes.alcohol_volume }}</span>
                                     </p>
@@ -100,7 +100,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Quốc gia: <br /><span class="text-primary-btc">{{ productData.product_attributes.country }}</span>
                                     </p>
@@ -109,7 +109,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Thương hiệu: <br /><span class="text-primary-btc">{{ productData.product_attributes.brand_name }}</span>
                                     </p>
@@ -118,7 +118,7 @@
                             <!-- Item 1 -->
                             <div class="col-6">
                                 <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
                                     <p class="mb-0">
                                         Nhiệt độ bảo quản: <br /><span class="text-primary-btc">{{
                                             productData.product_attributes.storage_Temp
