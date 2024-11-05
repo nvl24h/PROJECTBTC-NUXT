@@ -25,14 +25,14 @@
         :modules="modules"
         class="mySwiper brandlogo-slider"
     >
-        <swiper-slide><img class="partner__image" src="/images/viettinbank.png" alt="" /> </swiper-slide>
-        <swiper-slide><img class="partner__image" src="/images/vietnamendline.png" alt="" /> </swiper-slide>
-        <swiper-slide><img class="partner__image" src="/images/sungroup.png" alt="" /> </swiper-slide>
-        <swiper-slide><img class="partner__image" src="/images/sheraton.png" alt="" /> </swiper-slide>
-        <swiper-slide><img class="partner__image" src="/images/viettinbank.png" alt="" /> </swiper-slide>
-        <swiper-slide><img class="partner__image" src="/images/vietnamendline.png" alt="" /> </swiper-slide>
-        <swiper-slide><img class="partner__image" src="/images/sungroup.png" alt="" /> </swiper-slide>
-        <swiper-slide><img class="partner__image" src="/images/sheraton.png" alt="" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/viettinbank.png" alt="" loading="lazy" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/vietnamendline.png" alt="" loading="lazy" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/sungroup.png" alt="" loading="lazy" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/sheraton.png" alt="" loading="lazy" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/viettinbank.png" alt="" loading="lazy" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/vietnamendline.png" alt="" loading="lazy" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/sungroup.png" alt="" loading="lazy" /> </swiper-slide>
+        <swiper-slide><img class="partner__image" src="/images/sheraton.png" alt="" loading="lazy" /> </swiper-slide>
     </swiper>
 </template>
 <script>

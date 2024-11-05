@@ -5,7 +5,7 @@
             <!-- Item 1 -->
             <div class="col-lg-4 p-3 col-md-6 warehouse__item position-relative" data-number="01">
                 <div class="bg-white p-5">
-                    <img class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
+                    <NuxtImg quality="85" loading="lazy" class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
                     <h3 class="">Kho Hà Nội</h3>
                     <p class="mb-0">384 Kim Giang, P. Đại Kim, Quận Hoàng Mai, TP. Hà Nội</p>
                 </div>
@@ -13,7 +13,7 @@
             <!-- Item 2 -->
             <div class="col-lg-4 p-3 col-md-6 warehouse__item position-relative" data-number="02">
                 <div class="bg-white p-5">
-                    <img class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
+                    <NuxtImg quality="85" loading="lazy" class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
                     <h3 class="">Kho Hà Nội</h3>
                     <p class="mb-0">384 Kim Giang, P. Đại Kim, Quận Hoàng Mai, TP. Hà Nội</p>
                 </div>
@@ -21,7 +21,7 @@
             <!-- Item 3 -->
             <div class="col-lg-4 p-3 col-md-6 warehouse__item position-relative" data-number="03">
                 <div class="bg-white p-5">
-                    <img class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
+                    <NuxtImg quality="85" loading="lazy" class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
                     <h3 class="">Kho Hà Nội</h3>
                     <p class="mb-0">384 Kim Giang, P. Đại Kim, Quận Hoàng Mai, TP. Hà Nội</p>
                 </div>
@@ -29,7 +29,7 @@
             <!-- Item 4 -->
             <div class="col-lg-4 p-3 col-md-6 warehouse__item position-relative" data-number="04">
                 <div class="bg-white p-5">
-                    <img class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
+                    <NuxtImg quality="85" loading="lazy" class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
                     <h3 class="">Kho Hà Nội</h3>
                     <p class="mb-0">384 Kim Giang, P. Đại Kim, Quận Hoàng Mai, TP. Hà Nội</p>
                 </div>
@@ -37,7 +37,7 @@
             <!-- Item 5 -->
             <div class="col-lg-4 p-3 col-md-6 warehouse__item position-relative" data-number="05">
                 <div class="bg-white p-5">
-                    <img class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
+                    <NuxtImg quality="85" loading="lazy" class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
                     <h3 class="heading__sub warehouse__heading3">Kho Hà Nội</h3>
                     <p class="mb-0">384 Kim Giang, P. Đại Kim, Quận Hoàng Mai, TP. Hà Nội</p>
                 </div>
@@ -45,7 +45,7 @@
             <!-- Item 6 -->
             <div class="col-lg-4 p-3 col-md-6 warehouse__item position-relative" data-number="06">
                 <div class="bg-white p-5">
-                    <img class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
+                    <NuxtImg quality="85" loading="lazy" class="mb-4" src="/icons/warehouse.png" alt="warehouse" />
                     <h3 class="">Kho Hà Nội</h3>
                     <p class="mb-0">384 Kim Giang, P. Đại Kim, Quận Hoàng Mai, TP. Hà Nội</p>
                 </div>

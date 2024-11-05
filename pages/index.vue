@@ -5,7 +5,7 @@
         <section class="overflow-hidden bg-secondary-btc">
             <div class="container">
                 <div class="text-center position-relative py-3 text-white">
-                    <img class="position-absolute top-0 start-0" src="/images/Background hero.png" alt="" />
+                    <NuxtImg loading="lazy" quality="85" class="position-absolute top-0 start-0" src="/images/Background hero.png" alt="" />
                     <p class="mb-0">Rượu Vang Úc cho người Việt</p>
                     <p class="mb-0">Nơi trải nghiệm rượu vang trọn vẹn và thăng hoa</p>
                 </div>
@@ -19,7 +19,15 @@
                     <!-- item1 -->
                     <div class="col-lg-3 col-6 feature__item feature__item-01 position-relative">
                         <div class="d-flex gap-3">
-                            <img class="object-fit-cover" width="auto" height="60px" src="/icons/feature01.png" alt="" />
+                            <NuxtImg
+                                loading="lazy"
+                                quality="85"
+                                class="object-fit-cover"
+                                width="auto"
+                                height="60px"
+                                src="/icons/feature01.png"
+                                alt=""
+                            />
                             <h4 class="z-1">
                                 +2000 <br />
                                 Sản phẩm
@@ -30,7 +38,15 @@
                     <!-- item2 -->
                     <div class="col-lg-3 col-6 feature__item feature__item-02 position-relative">
                         <div class="d-flex gap-3">
-                            <img class="object-fit-cover" width="auto" height="60px" src="/icons/feature04.png" alt="" />
+                            <NuxtImg
+                                loading="lazy"
+                                quality="85"
+                                class="object-fit-cover"
+                                width="auto"
+                                height="60px"
+                                src="/icons/feature04.png"
+                                alt=""
+                            />
                             <h4 class="z-1">
                                 Giao hàng <br />
                                 Toàn quốc
@@ -41,7 +57,15 @@
                     <!-- item3 -->
                     <div class="col-lg-3 col-6 feature__item feature__item-03 position-relative">
                         <div class="d-flex gap-3">
-                            <img class="object-fit-cover" width="auto" height="60px" src="/icons/feature02.png " alt="" />
+                            <NuxtImg
+                                loading="lazy"
+                                quality="85"
+                                class="object-fit-cover"
+                                width="auto"
+                                height="60px"
+                                src="/icons/feature02.png "
+                                alt=""
+                            />
                             <h4 class="z-1">
                                 Giao hàng <br />
                                 Nhanh 24h
@@ -52,7 +76,15 @@
                     <!-- item4 -->
                     <div class="col-lg-3 col-6 feature__item feature__item-04 position-relative">
                         <div class="d-flex gap-3">
-                            <img class="object-fit-cover" width="auto" height="60px" src="/icons/feature03.png" alt="" />
+                            <NuxtImg
+                                loading="lazy"
+                                quality="85"
+                                class="object-fit-cover"
+                                width="auto"
+                                height="60px"
+                                src="/icons/feature03.png"
+                                alt=""
+                            />
                             <h4 class="z-1">
                                 Cam kết <br />
                                 Chất lượng
@@ -71,12 +103,40 @@
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 overflow-hidden">
-                                <img src="/images/image left 1.png" class="w-100 object-fit-cover" height="300px" alt="" />
-                                <img src="/images/image left 2.png" class="w-100 object-fit-cover mt-3" height="300px" alt="" />
+                                <NuxtImg
+                                    loading="lazy"
+                                    quality="85"
+                                    src="/images/image left 1.png"
+                                    class="w-100 object-fit-cover"
+                                    height="300px"
+                                    alt=""
+                                />
+                                <NuxtImg
+                                    loading="lazy"
+                                    quality="85"
+                                    src="/images/image left 2.png"
+                                    class="w-100 object-fit-cover mt-3"
+                                    height="300px"
+                                    alt=""
+                                />
                             </div>
                             <div class="col-6 overflow-hidden mt-5">
-                                <img src="/images/image right 1.png" class="w-100 object-fit-cover" height="300px" alt="" />
-                                <img src="/images/image right 3.png" class="w-100 object-fit-cover mt-3" height="300px" alt="" />
+                                <NuxtImg
+                                    loading="lazy"
+                                    quality="85"
+                                    src="/images/image right 1.png"
+                                    class="w-100 object-fit-cover"
+                                    height="300px"
+                                    alt=""
+                                />
+                                <NuxtImg
+                                    loading="lazy"
+                                    quality="85"
+                                    src="/images/image right 3.png"
+                                    class="w-100 object-fit-cover mt-3"
+                                    height="300px"
+                                    alt=""
+                                />
                             </div>
                         </div>
                     </div>
@@ -155,21 +215,21 @@
                 <div class="row justify-content-center">
                     <div class="col-md-4 mb-3 mb-md-0">
                         <div class="text-center bg-white p-5">
-                            <img class="mb-2" src="/icons/service01.png" alt="" />
+                            <NuxtImg loading="lazy" quality="85" class="mb-2" src="/icons/service01.png" alt="" />
                             <h3 class="mb-2">Doanh Nghiệp</h3>
                             <p class="w-75 mx-auto">Tư vấn quà tặng cho khách hàng danh nghiệp</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3 mb-md-0">
                         <div class="text-center bg-white p-5">
-                            <img class="mb-2" src="/icons/box.png" alt="" />
+                            <NuxtImg loading="lazy" quality="85" class="mb-2" src="/icons/box.png" alt="" />
                             <h3 class="mb-2">Tư Vấn Quà Tặng</h3>
                             <p class="w-75 mx-auto">Tư vấn quà tặng cho khách hàng cá nhân & danh nghiệp</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3 mb-md-0">
                         <div class="text-center bg-white p-5">
-                            <img class="mb-2" src="/icons/techer.png" alt="" />
+                            <NuxtImg loading="lazy" quality="85" class="mb-2" src="/icons/techer.png" alt="" />
                             <h3 class="mb-2">Đào Tạo</h3>
                             <p class="w-75 mx-auto">Đào tạo sản phẩm cho khách hàng</p>
                         </div>
@@ -226,7 +286,7 @@ if (productsSales.value.status !== 200) {
     throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
 }
 
-console.log(productsSales);  
+console.log(productsSales);
 </script>
 
 <style>

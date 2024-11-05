@@ -6,7 +6,7 @@
 
     <!-- Product Banner -->
     <section class="product__banner">
-        <img class="product__banner-img" src="/images/productHero.jpg" alt="" />
+        <NuxtImg quality="85" loading="lazy" class="product__banner-img" src="/images/productHero.jpg" alt="" />
     </section>
 
     <!-- Product Breadcrumb -->

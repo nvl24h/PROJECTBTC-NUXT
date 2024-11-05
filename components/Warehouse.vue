@@ -6,7 +6,7 @@
                 <!-- item1 -->
                 <div class="col-lg-4 col-md-6 border-btc">
                     <div class="d-flex gap-3">
-                        <img class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
+                        <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
                         <div class="">
                             <h4 class="">Kho Hà Nội</h4>
                             <p class="">Kho Hà Nội 384 Kim Giang, P. Đại Kim, Quận Hoàng Mai, TP. Hà Nội</p>
@@ -16,7 +16,7 @@
                 <!-- item1 -->
                 <div class="col-lg-4 col-md-6 border-btc">
                     <div class="d-flex gap-3">
-                        <img class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
+                        <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
                         <div class="">
                             <h4 class="">Kho Bắc Ninh</h4>
                             <p class="">KCN Yên Phong mở rộng, Yên Trung, Yên Phong, Bắc Ninh</p>
@@ -26,7 +26,7 @@
                 <!-- item1 -->
                 <div class="col-lg-4 col-md-6 border-btc">
                     <div class="d-flex gap-3">
-                        <img class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
+                        <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
                         <div class="">
                             <h4 class="">Kho Đà Nẵng</h4>
                             <p class="">K67/3 Hà Huy Tập, P. Chính Gián, Q. Thanh Khê, TP. Đà Nẵng</p>
@@ -36,7 +36,7 @@
                 <!-- item1 -->
                 <div class="col-lg-4 col-md-6 border-btc">
                     <div class="d-flex gap-3">
-                        <img class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
+                        <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
                         <div class="">
                             <h4 class="">Kho Nha Trang</h4>
                             <p class="">25 Củ Chi, Vĩnh Hải, Nha Trang</p>
@@ -46,7 +46,7 @@
                 <!-- item1 -->
                 <div class="col-lg-4 col-md-6 border-btc">
                     <div class="d-flex gap-3">
-                        <img class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
+                        <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
                         <div class="">
                             <h4 class="">Kho Bắc Ninh</h4>
                             <p class="">Thái Hoà, Tân Uyên, Bình Dương</p>
@@ -56,7 +56,7 @@
                 <!-- item1 -->
                 <div class="col-lg-4 col-md-6 border-btc">
                     <div class="d-flex gap-3">
-                        <img class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
+                        <NuxtImg quality="85" loading="lazy" class="object-fit-cover" height="40px" src="/icons/warehouse.png" alt="" />
                         <div class="">
                             <h4 class="">Kho Tp.Hồ Chí Minh</h4>
                             <p class="">134/19 Đào Duy Anh, Phường 9, Quận Phú Nhuận, Tp.HCM</p>

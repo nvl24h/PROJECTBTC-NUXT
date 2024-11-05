@@ -23,7 +23,7 @@
     >
         <swiper-slide>
             <div class="blog__item bg-white">
-                <img class="blog__image" src="/images/Event01.png" alt="image 1" />
+                <img class="blog__image" src="/images/Event01.png" alt="image 1" loading="lazy" />
                 <div class="px-4 mt-3">
                     <h3 class="fs-5"><NuxtLink to="#" class="text-decoration-none text-dark">Ruou vang trang</NuxtLink></h3>
                     <p class="blog__desc desc">
@@ -35,7 +35,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="blog__item bg-white">
-                <img class="blog__image" src="/images/Event01.png" alt="image 1" />
+                <img class="blog__image" src="/images/Event01.png" alt="image 1" loading="lazy" />
                 <div class="px-4 mt-3">
                     <h3 class="fs-5"><NuxtLink to="#" class="text-decoration-none text-dark">Ruou vang trang</NuxtLink></h3>
                     <p class="blog__desc desc">
@@ -47,7 +47,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="blog__item bg-white">
-                <img class="blog__image" src="/images/Event01.png" alt="image 1" />
+                <img class="blog__image" src="/images/Event01.png" alt="image 1" loading="lazy" />
                 <div class="px-4 mt-3">
                     <h3 class="fs-5"><NuxtLink to="#" class="text-decoration-none text-dark">Ruou vang trang</NuxtLink></h3>
                     <p class="blog__desc desc">
@@ -59,7 +59,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="blog__item bg-white">
-                <img class="blog__image" src="/images/Event01.png" alt="image 1" />
+                <img class="blog__image" src="/images/Event01.png" alt="image 1" loading="lazy" />
                 <div class="px-4 mt-3">
                     <h3 class="fs-5"><NuxtLink to="#" class="text-decoration-none text-dark">Ruou vang trang</NuxtLink></h3>
                     <p class="blog__desc desc">
@@ -71,7 +71,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="blog__item bg-white">
-                <img class="blog__image" src="/images/Event01.png" alt="image 1" />
+                <img class="blog__image" src="/images/Event01.png" alt="image 1" loading="lazy" />
                 <div class="px-4 mt-3">
                     <h3 class="fs-5"><NuxtLink to="#" class="text-decoration-none text-dark">Ruou vang trang</NuxtLink></h3>
                     <p class="blog__desc desc">
@@ -83,7 +83,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="blog__item bg-white">
-                <img class="blog__image" src="/images/Event01.png" alt="image 1" />
+                <img class="blog__image" src="/images/Event01.png" alt="image 1" loading="lazy" />
                 <div class="px-4 mt-3">
                     <h3 class="fs-5"><NuxtLink to="#" class="text-decoration-none text-dark">Ruou vang trang</NuxtLink></h3>
                     <p class="blog__desc desc">
@@ -95,7 +95,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="blog__item bg-white">
-                <img class="blog__image" src="/images/Event01.png" alt="image 1" />
+                <img class="blog__image" src="/images/Event01.png" alt="image 1" loading="lazy" />
                 <div class="px-4 mt-3">
                     <h3 class="fs-5"><NuxtLink to="#" class="text-decoration-none text-dark">Ruou vang trang</NuxtLink></h3>
                     <p class="blog__desc desc">

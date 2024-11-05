@@ -26,6 +26,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -44,6 +45,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -62,6 +64,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -80,6 +83,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -98,6 +102,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -116,6 +121,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -134,6 +140,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -152,6 +159,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
@@ -170,6 +178,7 @@
                     src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                     class="card-img-top pt-4"
                     alt="..."
+                    loading="lazy"
                 />
                 <div class="card-body">
                     <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>

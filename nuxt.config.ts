@@ -2,15 +2,18 @@
 export default defineNuxtConfig({
     compatibilityDate: "2024-04-03",
     devtools: {enabled: true},
+
     components: [
         {
             path: "~/components",
             pathPrefix: false,
         },
     ],
+
     plugins: [
         "~/plugins/bootstrap.client.js", // Url to file plugin Bootstrap,
     ],
+
     app: {
         head: {
             title: "BETTYCHOICE VIỆT NAM",
@@ -27,6 +30,7 @@ export default defineNuxtConfig({
             ],
         },
     },
+
     runtimeConfig: {
         currencyKey: process.env.CURRENCY_API_KEY,
         public: {
@@ -34,4 +38,6 @@ export default defineNuxtConfig({
             x_api_key: process.env.X_API_KEY,
         },
     },
+
+    modules: ["@nuxt/image"],
 });

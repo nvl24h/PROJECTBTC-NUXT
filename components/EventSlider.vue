@@ -28,7 +28,7 @@
     >
         <swiper-slide
             ><div>
-                <img src="/images/Event01.png" alt="" />
+                <img src="/images/Event01.png" alt="" loading="lazy" />
                 <div class="event__box py-3">
                     <h3 class="fs-5 fw-bold mb-2">Hà Nội | MATTER of TASTE | new</h3>
                     <p class="mb-0">Thời gian: 18:00, ngày 28/09/2024 new</p>
@@ -38,7 +38,7 @@
         </swiper-slide>
         <swiper-slide
             ><div>
-                <img src="/images/Event01.png" alt="" />
+                <img src="/images/Event01.png" alt="" loading="lazy" />
                 <div class="event__box py-3">
                     <h3 class="fs-5 fw-bold mb-2">Hà Nội | MATTER of TASTE |</h3>
                     <p class="mb-0">Thời gian: 18:00, ngày 28/09/2024</p>
@@ -48,7 +48,7 @@
         </swiper-slide>
         <swiper-slide
             ><div>
-                <img src="/images/Event01.png" alt="" />
+                <img src="/images/Event01.png" alt="" loading="lazy" />
                 <div class="event__box py-3">
                     <h3 class="fs-5 fw-bold mb-2">Hà Nội | MATTER of TASTE |</h3>
                     <p class="mb-0">Thời gian: 18:00, ngày 28/09/2024</p>
@@ -58,7 +58,7 @@
         </swiper-slide>
         <swiper-slide
             ><div>
-                <img src="/images/Event01.png" alt="" />
+                <img src="/images/Event01.png" alt="" loading="lazy" />
                 <div class="event__box py-3">
                     <h3 class="fs-5 fw-bold mb-2">Hà Nội | MATTER of TASTE |</h3>
                     <p class="mb-0">Thời gian: 18:00, ngày 28/09/2024</p>
@@ -68,7 +68,7 @@
         </swiper-slide>
         <swiper-slide
             ><div>
-                <img src="/images/Event01.png" alt="" />
+                <img src="/images/Event01.png" alt="" loading="lazy" />
                 <div class="event__box py-3">
                     <h3 class="fs-5 fw-bold mb-2">Hà Nội | MATTER of TASTE |</h3>
                     <p class="mb-0">Thời gian: 18:00, ngày 28/09/2024</p>
@@ -78,7 +78,7 @@
         </swiper-slide>
         <swiper-slide
             ><div>
-                <img src="/images/Event01.png" alt="" />
+                <img src="/images/Event01.png" alt="" loading="lazy" />
                 <div class="event__box py-3">
                     <h3 class="fs-5 fw-bold mb-2">Hà Nội | MATTER of TASTE |</h3>
                     <p class="mb-0">Thời gian: 18:00, ngày 28/09/2024</p>

@@ -5,7 +5,9 @@
                 <div class="col-lg-3 col-md-4 col-6" v-for="product in collectionData" :key="product.id">
                     <div class="card rounded-4 product-slider position-relative">
                         <div class="overflow-hidden position-relative" style="height: 270px">
-                            <img
+                            <NuxtImg
+                                quality="85"
+                                loading="lazy"
                                 :src="product.product_thumb"
                                 class="card-img-top pt-4 position-absolute top-50 start-50 translate-middle"
                                 alt="..."

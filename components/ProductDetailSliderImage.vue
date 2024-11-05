@@ -11,7 +11,7 @@
         :modules="modules"
         class="mySwiper2"
     >
-        <swiper-slide v-for="image in productThumb"><img :src="image" /></swiper-slide>
+        <swiper-slide v-for="image in productThumb"><img :src="image" loading="lazy" /></swiper-slide>
     </swiper>
     <swiper
         @swiper="setThumbsSwiper"

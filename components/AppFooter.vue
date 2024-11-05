@@ -8,7 +8,7 @@ import {socials, logo, introduces} from "@/utils";
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-6">
                     <div class="d-flex align-items-center gap-3 text-light">
-                        <img src="/icons/action_footer.png" alt="" max-height="86px" width="auto" />
+                        <NuxtImg quality="85" loading="lazy" src="/icons/action_footer.png" alt="" max-height="86px" width="auto" />
                         <div>
                             <h3 class="fs-4 fw-normal">Đăng ký nhận ưu đãi</h3>
                             <p class="mb-0">Điền thông tin của bạn để được tư vấn ưu đãi miễn phí</p>
@@ -40,7 +40,7 @@ import {socials, logo, introduces} from "@/utils";
             <div class="row">
                 <div class="col-md-6 text-secondary">
                     <div>
-                        <img :src="logo.footer" :alt="logo.alt" style="max-height: 60px; width: auto" />
+                        <NuxtImg quality="85" loading="lazy" :src="logo.footer" :alt="logo.alt" style="max-height: 60px; width: auto" />
                         <p class="mt-3 fs-6 footer-info" style="text-align: justify">
                             Betty’s choice là tập hợp những sản phẩm chất lượng cao của nước Úc, những sản phẩm đã được lựa chọn kỹ càng để phù hợp
                             nhất với dinh dưỡng, khẩu vị và thói quen của người Việt.
