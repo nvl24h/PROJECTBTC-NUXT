@@ -20,22 +20,30 @@
                             <!-- form search -->
                             <form action="" class="ms-auto w-75">
                                 <input
-                                    class="form-control rounded-pill border-2 border-primary-btc"
+                                    class="form-control rounded-pill border-2 border-primary-btc search-product"
                                     type="text"
                                     name=""
                                     id=""
                                     placeholder="Tìm kiếm sản phẩm"
                                 />
+                                <!-- search box -->
+                                <div class="position-absolute bg-white w-75 my-2 rounded-2 z-3 search-product_box">
+                                    <ul class="py-2">
+                                        <li
+                                            class="search__item list-group-numbered border-bottom border-primary-secondary py-2 me-3"
+                                            v-for="item in searchResults"
+                                            :key="item.id"
+                                        >
+                                            <img class="search__item-img" :src="item.image" :alt="item.name" height="40px" />
+                                            <NuxtLink
+                                                :to="`/products/${item.id}`"
+                                                class="search__link text-decoration-none text-primary-btc fs-6 lh-1"
+                                                >{{ item.name }}</NuxtLink
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
                             </form>
-                            <!-- search box -->
-                            <div class="d-none">
-                                <ul class="">
-                                    <li class="search__item" v-for="item in searchResults" :key="item.id">
-                                        <img class="search__item-img" :src="item.image" :alt="item.name" height="40px" />
-                                        <NuxtLink :to="`/products/${item.id}`" class="search__link">{{ item.name }}</NuxtLink>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                         <!-- Social -->
                         <div class="header-social col-4 d-lg-flex gap-2 justify-content-end d-none">
@@ -76,11 +84,11 @@
             <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
                     <li class="nav-item text-lg-center" v-for="category in categories" :key="category.name">
-                        <a
+                        <NuxtLink
                             :href="`/collections/${category.path}`"
                             :class="['nav-link fw-bold fs-6 text-uppercase px-3 primary-btc-hover position-relative']"
-                            >{{ category.name }}</a
-                        >
+                            >{{ category.name }}
+                        </NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -92,7 +100,24 @@
 import {contacts, socials, logo, categories} from "@/utils";
 
 // Fetch
-const searchResults = [{name: "111111111", image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png"}];
+const searchResults = [
+    {
+        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
+        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
+    },
+    {
+        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
+        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
+    },
+    {
+        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
+        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
+    },
+    {
+        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
+        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
+    },
+];
 </script>
 
 <style>
@@ -112,6 +137,14 @@ const searchResults = [{name: "111111111", image: "https://product.hstatic.net/2
     height: 3px;
     width: 100%;
     background-color: #48c7f0;
+}
+
+.search-product:focus + .search-product_box {
+    display: block !important;
+}
+
+.search-product_box {
+    display: none;
 }
 
 @media (max-width: 1399.98px) {

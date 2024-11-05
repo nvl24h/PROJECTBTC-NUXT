@@ -20,172 +20,15 @@
         :modules="modules"
         class="mySwiper"
     >
-        <SwiperSlide>
+        <SwiperSlide v-for="product in products">
             <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
+                <img :src="product.product_thumb" class="card-img-top pt-4" alt="..." loading="lazy" />
                 <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
+                    <h5 class="card-title fs-6">{{ product.product_name }}</h5>
                     <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
                     <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
-                <img
-                    src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
-                    class="card-img-top pt-4"
-                    alt="..."
-                    loading="lazy"
-                />
-                <div class="card-body">
-                    <h5 class="card-title fs-6">Vang đỏ Pháp Château Fontaubert Bordeaux 2021</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">650,<span class="fs-6">000</span></p>
-                    <a
-                        class="product__link position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        href="#"
+                        class="product__link position-absolute text-decoration-none top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
+                        :href="`products/${product.product_slug}`"
                         ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
                     ></a>
                 </div>
@@ -210,8 +53,17 @@ export default {
         Swiper,
         SwiperSlide,
     },
-    setup() {
+
+    props: {
+        productsSales: {
+            type: Array,
+            default: "aaaa",
+        },
+    },
+
+    setup(props) {
         return {
+            products: props.productsSales,
             modules: [Navigation],
         };
     },

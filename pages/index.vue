@@ -5,7 +5,7 @@
         <section class="overflow-hidden bg-secondary-btc">
             <div class="container">
                 <div class="text-center position-relative py-3 text-white">
-                    <NuxtImg loading="lazy" quality="85" class="position-absolute top-0 start-0" src="/images/Background hero.png" alt="" />
+                    <img loading="lazy" quality="85" class="position-absolute top-0 start-0" src="/images/Background hero.png" alt="" />
                     <p class="mb-0">Rượu Vang Úc cho người Việt</p>
                     <p class="mb-0">Nơi trải nghiệm rượu vang trọn vẹn và thăng hoa</p>
                 </div>
@@ -63,7 +63,7 @@
                                 class="object-fit-cover"
                                 width="auto"
                                 height="60px"
-                                src="/icons/feature02.png "
+                                src="/icons/feature02.png"
                                 alt=""
                             />
                             <h4 class="z-1">
@@ -203,7 +203,7 @@
                     <h2 class="text-center mb-5">Sản Phẩm Bán Chạy</h2>
                     <!-- list product -->
                     <div class="products__list">
-                        <ProductSlider />
+                        <ProductSlider :productsSales="productsSale" />
                     </div>
                 </div>
             </div>
@@ -274,19 +274,24 @@
 const config = useRuntimeConfig();
 
 // Using useFetch
-const url = "/v1/api/collections/vang-do";
-const {data: productsSales} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
-    headers: {
-        "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
-        "Content-Type": "application/json",
-    },
-});
+let productsSale;
+const productDataApi = async () => {
+    const url = "/v1/api/collections/vang-do";
+    const {data: products} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
+        headers: {
+            "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
+            "Content-Type": "application/json",
+        },
+    });
 
-if (productsSales.value.status !== 200) {
-    throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
-}
+    if (products.value.status !== 200) {
+        throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
+    }
 
-console.log(productsSales);
+    productsSale = products.value.metadata;
+    return productsSale;
+};
+productDataApi();
 </script>
 
 <style>

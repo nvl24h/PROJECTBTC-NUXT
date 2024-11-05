@@ -32,4 +32,8 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+a {
+    text-decoration: none;
+}
 </style>
