@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
     <main>
         <AppBanner />
@@ -211,6 +209,25 @@
         </section>
     </main>
 </template>
+
+<script setup>
+const config = useRuntimeConfig();
+
+// Using useFetch
+const url = "/v1/api/collections/vang-do";
+const {data: productsSales} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
+    headers: {
+        "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
+        "Content-Type": "application/json",
+    },
+});
+
+if (productsSales.value.status !== 200) {
+    throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
+}
+
+console.log(productsSales);  
+</script>
 
 <style>
 .feature__item::after {

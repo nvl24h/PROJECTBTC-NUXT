@@ -152,6 +152,18 @@
 
     <!-- Warehouse -->
     <Warehouse />
+
+    <section class="products py-5">
+        <div class="container">
+            <div class="products__box">
+                <h2 class="text-start mb-5">Sản vừa xem</h2>
+                <!-- list product -->
+                <div class="products__list">
+                    <ProductSlider />
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup>

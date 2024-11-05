@@ -45,7 +45,7 @@
                                 :key="social.name"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="d-flex justify-content-center align-items-center rounded"
+                                class="d-flex justify-content-center align-items-center rounded text-decoration-none"
                                 style="color: #8b959e; width: 40px; height: 40px; flex-shrink: 0; background-color: #f1f1f1"
                             >
                                 <i :class="social.icon"></i>
@@ -76,12 +76,11 @@
             <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
                     <li class="nav-item text-lg-center" v-for="category in categories" :key="category.name">
-                        <NuxtLink
-                            :to="`/collections/${category.path}`"
+                        <a
+                            :href="`/collections/${category.path}`"
                             :class="['nav-link fw-bold fs-6 text-uppercase px-3 primary-btc-hover position-relative']"
+                            >{{ category.name }}</a
                         >
-                            {{ category.name }}
-                        </NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -93,7 +92,7 @@
 import {contacts, socials, logo, categories} from "@/utils";
 
 // Fetch
-const searchResults = [{name: "111111111", image: "aaaaaaaaaa"}];
+const searchResults = [{name: "111111111", image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png"}];
 </script>
 
 <style>

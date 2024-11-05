@@ -55,7 +55,7 @@ import {socials, logo, introduces} from "@/utils";
                                 :key="social.name"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="d-flex justify-content-center align-items-center rounded-circle"
+                                class="d-flex justify-content-center align-items-center rounded-circle text-decoration-none"
                                 style="color: #8b959e; width: 40px; height: 40px; flex-shrink: 0; background-color: #f1f1f1"
                             >
                                 <i :class="social.icon"></i>
@@ -80,7 +80,7 @@ import {socials, logo, introduces} from "@/utils";
                             <i class="fa-solid fa-phone fa-2xl"></i>
                             <h3><a href="tel:0966999591" class="text-light text-decoration-none">0966.999.591</a></h3>
                         </div>
-                        <div class="d-flex gap-2 align-items-enter mb-4 footer-contact-box">
+                        <div class="d-flex gap-2 align-items-center mb-4 footer-contact-box">
                             <i class="fa-regular fa-envelope fa-2xl"></i>
                             <p class="mb-0">
                                 <a href="mailto:info@bettychoice.au" class="text-secondary text-decoration-none">info@bettychoice.au</a>
