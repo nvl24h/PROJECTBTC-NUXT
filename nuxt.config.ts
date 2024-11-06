@@ -14,6 +14,8 @@ export default defineNuxtConfig({
         "~/plugins/bootstrap.client.js", // Url to file plugin Bootstrap,
     ],
 
+    css: ["bootstrap/dist/css/bootstrap.min.css"],
+
     app: {
         head: {
             title: "BETTYCHOICE VIỆT NAM",

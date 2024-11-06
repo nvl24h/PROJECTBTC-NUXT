@@ -30,16 +30,14 @@
                                 <div class="position-absolute bg-white w-75 my-2 rounded-2 z-3 search-product_box">
                                     <ul class="py-2">
                                         <li
-                                            class="search__item list-group-numbered border-bottom border-primary-secondary py-2 me-3"
+                                            class="search__item list-group-numbered border-bottom border-primary-secondary py-2 me-3 d-flex align-items-center"
                                             v-for="item in searchResults"
                                             :key="item.id"
                                         >
                                             <img class="search__item-img" :src="item.image" :alt="item.name" height="40px" />
-                                            <NuxtLink
-                                                :to="`/products/${item.id}`"
-                                                class="search__link text-decoration-none text-primary-btc fs-6 lh-1"
-                                                >{{ item.name }}</NuxtLink
-                                            >
+                                            <a :href="`/products/${item.id}`" class="search__link text-decoration-none text-primary-btc fs-6 lh-2">{{
+                                                item.name
+                                            }}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -145,6 +143,10 @@ const searchResults = [
 
 .search-product_box {
     display: none;
+}
+
+.search-product_box:hover {
+    display: block !important;
 }
 
 @media (max-width: 1399.98px) {
