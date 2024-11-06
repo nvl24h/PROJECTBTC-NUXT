@@ -51,43 +51,29 @@
 </template>
 
 <script setup>
-import {ref, watch} from "vue";
-import {useRoute, useRuntimeConfig} from "nuxt/app";
-
-const route = useRoute();
+import {useRoute} from "vue-router";
+const router = useRoute();
+const id = router.params.id;
 const config = useRuntimeConfig();
-const products = ref(null);
 
-const productDataApi = async (id) => {
-    try {
-        const url = `/v1/api/collections/${id}`;
-        const {data: productsData, error} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
-            headers: {
-                "x-api-key": `${config.public.x_api_key}`,
-                "Content-Type": "application/json",
-            },
-        });
+let products;
+const productDataApi = async () => {
+    const url = "/v1/api/collections/" + id;
+    const {data: productsData} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
+        headers: {
+            "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
+            "Content-Type": "application/json",
+        },
+    });
 
-        if (error.value || productsData.value.status !== 200) {
-            throw createError({statusCode: 404, statusMessage: "Collection not Found", fatal: true});
-        }
-
-        products.value = productsData.value.metadata;
-    } catch (error) {
-        console.error(error);
+    if (productsData.value.status !== 200) {
+        throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
     }
+
+    products = productsData.value.metadata;
+    return products;
 };
-
-// Gọi API khi component được mount lần đầu
-productDataApi(route.params.id);
-
-// Theo dõi sự thay đổi của `route.params.id` để gọi lại API
-watch(
-    () => route.params.id,
-    (newId) => {
-        productDataApi(newId);
-    }
-);
+productDataApi();
 </script>
 
 <style scoped>
