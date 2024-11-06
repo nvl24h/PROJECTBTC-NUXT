@@ -79,17 +79,19 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
-                    <li class="nav-item text-lg-center" v-for="category in categories" :key="category.name">
-                        <a
-                            :href="`/collections/${category.path}`"
-                            :class="['nav-link fw-bold fs-6 text-uppercase px-3 primary-btc-hover position-relative']"
-                            >{{ category.name }}
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <Suspense>
+                <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
+                        <li class="nav-item text-lg-center" v-for="category in categories" :key="category.name">
+                            <NuxtLink
+                                :to="`/collections/${category.path}`"
+                                :class="['nav-link fw-bold fs-6 text-uppercase px-3 primary-btc-hover position-relative']"
+                                >{{ category.name }}
+                            </NuxtLink>
+                        </li>
+                    </ul>
+                </div>
+            </Suspense>
         </div>
     </nav>
 </template>

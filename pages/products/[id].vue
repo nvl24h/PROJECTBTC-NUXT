@@ -4,7 +4,7 @@
 
     <!-- Product Banner -->
     <section class="product__banner">
-        <NuxtImg quality="85" loading="lazy" class="product__banner-img" src="/images/productHero.jpg" alt="" />
+        <img quality="85" loading="lazy" class="product__banner-img" src="/images/productHero.jpg" alt="" />
     </section>
 
     <!-- Product Breadcrumb -->
