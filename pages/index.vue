@@ -260,7 +260,12 @@
         <!-- Blog -->
         <section class="py-5">
             <div class="container">
-                <BlogSlider />
+                <div class="text-center">
+                    <h3 class="mb-5">Loại Rượu Vang</h3>
+                    <div class="">
+                        <BlogSlider />
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Warehouses -->

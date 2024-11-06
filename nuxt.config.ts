@@ -10,11 +10,11 @@ export default defineNuxtConfig({
         },
     ],
 
+    css: ["bootstrap/dist/css/bootstrap.min.css"],
+
     plugins: [
         "~/plugins/bootstrap.client.js", // Url to file plugin Bootstrap,
     ],
-
-    css: ["bootstrap/dist/css/bootstrap.min.css"],
 
     app: {
         head: {

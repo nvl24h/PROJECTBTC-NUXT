@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
     <!-- Features Detail -->
     <FeaturesDetail />
@@ -16,6 +14,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/" class="text-primary-btc text-decoration-none">Home</router-link></li>
                     <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ id }}</li>
                 </ol>
             </nav>
         </div>
@@ -48,6 +47,26 @@
 
     <Warehouse />
 </template>
+
+<script setup>
+import {useRoute} from "vue-router";
+const router = useRoute();
+const id = router.params.id;
+const config = useRuntimeConfig();
+
+// Using useFetch
+const url = "/v1/api/collections/" + id;
+const {data: products} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
+    headers: {
+        "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
+        "Content-Type": "application/json",
+    },
+});
+
+if (products.value.status !== 200) {
+    throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
+}
+</script>
 
 <style scoped>
 .product__banner-img {

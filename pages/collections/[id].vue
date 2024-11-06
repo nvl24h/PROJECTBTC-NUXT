@@ -31,11 +31,13 @@
                         <li class="page-item disabled">
                             <a class="page-link">Previous</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">2</a>
+                        <li class="page-item" aria-current="page">
+                            <a class="page-link" :href="`${id}/1`">1</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item active">
+                            <a class="page-link" href="2">2</a>
+                        </li>
+
                         <li class="page-item">
                             <a class="page-link" href="#">Next</a>
                         </li>
@@ -54,18 +56,24 @@ const router = useRoute();
 const id = router.params.id;
 const config = useRuntimeConfig();
 
-// Using useFetch
-const url = "/v1/api/collections/" + id;
-const {data: products} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
-    headers: {
-        "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
-        "Content-Type": "application/json",
-    },
-});
+let products;
+const productDataApi = async () => {
+    const url = "/v1/api/collections/" + id;
+    const {data: productsData} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
+        headers: {
+            "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
+            "Content-Type": "application/json",
+        },
+    });
 
-if (products.value.status !== 200) {
-    throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
-}
+    if (productsData.value.status !== 200) {
+        throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
+    }
+
+    products = productsData.value.metadata;
+    return products;
+};
+productDataApi();
 </script>
 
 <style scoped>

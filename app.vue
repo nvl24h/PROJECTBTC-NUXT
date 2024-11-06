@@ -6,6 +6,8 @@
     </div>
 </template>
 
+<script setup></script>
+
 <style>
 .bg-primary-btc {
     background-color: #48c7f0 !important;
