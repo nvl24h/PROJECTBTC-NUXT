@@ -1,18 +1,17 @@
 <template>
-    <!-- Features Detail -->
     <FeaturesDetail />
 
-    <!-- Product Banner -->
     <section class="product__banner">
-        <img class="product__banner-img" src="/images/productHero.jpg" alt="" />
+        <img class="product__banner-img" src="/images/productHero.jpg" alt="Product Banner" />
     </section>
 
-    <!-- Product Breadcrumb -->
     <section class="py-3">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><router-link to="/" class="text-primary-btc text-decoration-none">Home</router-link></li>
+                    <li class="breadcrumb-item">
+                        <NuxtLink to="/" class="text-primary-btc text-decoration-none">Home</NuxtLink>
+                    </li>
                     <li class="breadcrumb-item active" aria-current="page">Library</li>
                     <li class="breadcrumb-item active" aria-current="page">{{ id }}</li>
                 </ol>
@@ -20,26 +19,21 @@
         </div>
     </section>
 
-    <!-- Product -->
-    <Product />
-    <!--    Phan trang -->
+    <Product :collectionData="products" />
+
     <section class="py-3">
         <div class="container">
             <div class="d-flex justify-content-center">
-                <nav aria-label="...">
+                <nav aria-label="Pagination Navigation">
                     <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link">Previous</a>
+                        <li class="page-item" :class="{disabled: currentPage === 1}">
+                            <a class="page-link" :href="`${id}/${currentPage - 1}`" aria-disabled="currentPage === 1">Previous</a>
                         </li>
-                        <li class="page-item" aria-current="page">
-                            <a class="page-link" :href="`${id}/1`">1</a>
+                        <li v-for="page in totalPages" :key="page" class="page-item" :class="{active: page === currentPage}">
+                            <a class="page-link" :href="`${id}/${page}`">{{ page }}</a>
                         </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="2">2</a>
-                        </li>
-
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
+                        <li class="page-item" :class="{disabled: currentPage === totalPages}">
+                            <a class="page-link" :href="`${id}/${currentPage + 1}`" aria-disabled="currentPage === totalPages">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -51,29 +45,30 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
 import {useRoute} from "vue-router";
-const router = useRoute();
-const id = router.params.id;
+import {useFetch, useError} from "#imports";
+
+const route = useRoute();
+const id = route.params.id;
+
 const config = useRuntimeConfig();
+let products = ref([]);
+let currentPage = ref(1);
+let totalPages = 3;
 
-let products;
-const productDataApi = async () => {
-    const url = "/v1/api/collections/" + id;
-    const {data: productsData} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
-        headers: {
-            "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
-            "Content-Type": "application/json",
-        },
-    });
+const {data: productsData, error} = await useFetch(`${config.public.apiBaseUrl}/v1/api/collections/${id}`, {
+    headers: {
+        "x-api-key": config.public.x_api_key,
+        "Content-Type": "application/json",
+    },
+});
 
-    if (productsData.value.status !== 200) {
-        throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
-    }
-
-    products = productsData.value.metadata;
-    return products;
-};
-productDataApi();
+if (error.value || productsData.value.status !== 200) {
+    useError({statusCode: 404, statusMessage: "Collection not Found"});
+} else {
+    products.value = productsData.value.metadata;
+}
 </script>
 
 <style scoped>

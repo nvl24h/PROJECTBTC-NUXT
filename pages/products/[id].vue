@@ -4,7 +4,7 @@
 
     <!-- Product Banner -->
     <section class="product__banner">
-        <img quality="85" loading="lazy" class="product__banner-img" src="/images/productHero.jpg" alt="" />
+        <img quality="85" loading="lazy" class="product__banner-img" src="/images/productHero.jpg" alt="Product Banner" />
     </section>
 
     <!-- Product Breadcrumb -->
@@ -24,22 +24,19 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <div class="">
-                        <ProductDetailSliderImage :productThumb="productImage" />
-                    </div>
+                    <ProductDetailSliderImage :productThumb="productImage" />
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div>
                         <h2 class="fs-3 fw-normal">{{ productData.product_name }}</h2>
                         <p>{{ productData.product_details }}</p>
-                        <!-- Social -->
                         <div class="d-flex gap-4">
                             <p>Tình trạng: <span class="text-primary-btc">Còn hàng</span></p>
                             <div class="header-social col-4 d-lg-flex gap-2 d-none">
                                 <a
-                                    :href="social.link"
                                     v-for="social in socials"
                                     :key="social.name"
+                                    :href="social.link"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="d-flex justify-content-center align-items-center rounded"
@@ -49,80 +46,21 @@
                                 </a>
                             </div>
                         </div>
-                        <h2 class="">{{ productData.product_price }}<span>đ</span></h2>
-                        <!-- type -->
+                        <!-- Format price using toLocaleString -->
+                        <h2>{{ formatCurrency(productData.product_price) }}</h2>
                         <div class="row g-2">
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
+                            <div v-for="(attribute, key) in productAttributes" :key="key" class="col-6">
+                                <div class="d-flex w-100 align-items-center gap-2">
+                                    <img
+                                        quality="85"
+                                        loading="lazy"
+                                        class="object-fit-cover"
+                                        height="100%"
+                                        src="/icons/grape.png"
+                                        alt="Attribute Icon"
+                                    />
                                     <p class="mb-0">
-                                        Giống nho: <br /><span class="text-primary-btc">{{ productData.product_attributes.type }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
-                                    <p class="mb-0">
-                                        Dung tích: <br /><span class="text-primary-btc">{{ productData.product_attributes.size }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
-                                    <p class="mb-0">
-                                        Vùng: <br /><span class="text-primary-btc">{{ productData.product_attributes.region }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
-                                    <p class="mb-0">
-                                        Niên vụ: <br /><span class="text-primary-btc">{{ productData.product_attributes.current_vintage }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
-                                    <p class="mb-0">
-                                        Nồng độ: <br /><span class="text-primary-btc">{{ productData.product_attributes.alcohol_volume }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
-                                    <p class="mb-0">
-                                        Quốc gia: <br /><span class="text-primary-btc">{{ productData.product_attributes.country }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
-                                    <p class="mb-0">
-                                        Thương hiệu: <br /><span class="text-primary-btc">{{ productData.product_attributes.brand_name }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Item 1 -->
-                            <div class="col-6">
-                                <div class="d-flex w-100 d-flex w-100 align-items-center gap-2">
-                                    <img quality="85" loading="lazy" class="object-fit-cover" height="100%" src="/icons/grape.png" alt="grape" />
-                                    <p class="mb-0">
-                                        Nhiệt độ bảo quản: <br /><span class="text-primary-btc">{{
-                                            productData.product_attributes.storage_Temp
-                                        }}</span>
+                                        {{ attribute.label }}: <br /><span class="text-primary-btc">{{ attribute.value }}</span>
                                     </p>
                                 </div>
                             </div>
@@ -130,26 +68,20 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="">
-                        <a href="#" class="btn btn-lg bg-primary-btc text-light w-100"
-                            ><i class="fa-solid fa-file-arrow-down"></i> Download catalogue</a
-                        >
-                        <div class="border mt-3 p-3 rounded border-info d-flex gap-2">
-                            <NuxtImg
-                                quality="85"
-                                loading="lazy"
-                                class="object-fit-cover"
-                                src="/icons/call-icon.png"
-                                alt="Hỗ trở mua hàng"
-                                height="20px"
-                            />
-                            <div class="">
-                                <p class="mb-1">Hỗ trợ mua hàng</p>
-                                <!-- <h3 class="mt-0">0966 999 591 <br />0909 395885</h3> -->
-                                <a class="text-primary-btc text-decoration-none fs-4 fw-bold" href="tel:0966999591">0966 999 591</a>
-                                <br />
-                                <a class="text-primary-btc text-decoration-none fs-4 fw-bold" href="tel:0909395885">0909 395885</a>
-                            </div>
+                    <a href="#" class="btn btn-lg bg-primary-btc text-light w-100"><i class="fa-solid fa-file-arrow-down"></i> Download catalogue</a>
+                    <div class="border mt-3 p-3 rounded border-info d-flex gap-2">
+                        <NuxtImg
+                            quality="85"
+                            loading="lazy"
+                            class="object-fit-cover"
+                            src="/icons/call-icon.png"
+                            alt="Hỗ trợ mua hàng"
+                            height="20px"
+                        />
+                        <div>
+                            <p class="mb-1">Hỗ trợ mua hàng</p>
+                            <a class="text-primary-btc text-decoration-none fs-4 fw-bold" href="tel:0966999591">0966 999 591</a><br />
+                            <a class="text-primary-btc text-decoration-none fs-4 fw-bold" href="tel:0909395885">0909 395885</a>
                         </div>
                     </div>
                 </div>
@@ -162,63 +94,68 @@
 
     <section class="products py-5">
         <div class="container">
-            <div class="products__box">
-                <h2 class="text-start mb-5">Sản vừa xem</h2>
-                <!-- list product -->
-                <div class="products__list">
-                    <ProductSlider :productsSales="productsSale" />
-                </div>
-            </div>
+            <h2 class="text-start mb-5">Sản phẩm vừa xem</h2>
+            <ProductSlider :productsSales="productsSale" />
         </div>
     </section>
 </template>
 
 <script setup>
 import {socials} from "@/utils";
-import {useRoute} from "vue-router";
-import {useFetch} from "nuxt/app"; // Đảm bảo import useFetch nếu chưa có
-import {createError} from "h3"; // Đảm bảo import createError nếu chưa có
+import {useRoute, useAsyncData} from "nuxt/app";
 
-const router = useRoute();
-const id = router.params.id;
+const route = useRoute();
+const id = route.params.id;
 const config = useRuntimeConfig();
 
-// Using useFetch
-const url = `/v1/api/products/${id}`;
-
-const {data: product} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
-    headers: {
-        "x-api-key": `${config.public.x_api_key}`, // use from runtimeConfig
-        "Content-Type": "application/json",
-    },
-});
-
-if (product.value && product.value.status !== 200) {
-    throw createError({statusCode: 404, statusMessage: "Product not Found", fatal: true});
-}
-
-// Data products
-const productData = product.value.metadata;
-const productImage = [productData.product_thumb, ...productData.product_gallery];
-
-let productsSale;
-const productDataApi = async () => {
-    const url = "/v1/api/collections/vang-do";
-    const {data: products} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
+// Fetch product data
+const {data: product, error} = await useAsyncData(() =>
+    $fetch(`/v1/api/products/${id}`, {
+        baseURL: config.public.apiBaseUrl,
         headers: {
-            "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
+            "x-api-key": config.public.x_api_key,
             "Content-Type": "application/json",
         },
+    })
+);
+
+if (error.value) {
+    throw createError({statusCode: 404, statusMessage: "Product not found", fatal: true});
+}
+
+const productData = product.value.metadata;
+const productImage = [productData.product_thumb, ...productData.product_gallery];
+const productAttributes = [
+    {label: "Giống nho", value: productData.product_attributes.type},
+    {label: "Dung tích", value: productData.product_attributes.size},
+    {label: "Vùng", value: productData.product_attributes.region},
+    {label: "Niên vụ", value: productData.product_attributes.current_vintage},
+    {label: "Nồng độ", value: productData.product_attributes.alcohol_volume},
+    {label: "Quốc gia", value: productData.product_attributes.country},
+    {label: "Thương hiệu", value: productData.product_attributes.brand_name},
+    {label: "Nhiệt độ bảo quản", value: productData.product_attributes.storage_Temp},
+];
+
+// Fetch products for "Sản phẩm vừa xem"
+let productsSale;
+const {data: products} = await useAsyncData(() =>
+    $fetch("/v1/api/collections/vang-do", {
+        baseURL: config.public.apiBaseUrl,
+        headers: {
+            "x-api-key": config.public.x_api_key,
+            "Content-Type": "application/json",
+        },
+    })
+);
+productsSale = products.value.metadata;
+
+// Format currency function
+const formatCurrency = (value) => {
+    return value.toLocaleString("vi-VN", {
+        style: "currency",
+        currency: "VND",
     });
-
-    if (products.value.status !== 200) {
-        throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
-    }
-
-    productsSale = products.value.metadata;
-    return productsSale;
 };
-productDataApi();
 </script>
 
 <style scoped>

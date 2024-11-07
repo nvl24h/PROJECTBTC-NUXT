@@ -10,19 +10,20 @@
                                 loading="lazy"
                                 :src="product.product_thumb"
                                 class="card-img-top pt-4 position-absolute top-50 start-50 translate-middle"
-                                alt="..."
+                                alt="Product Image"
                                 style="height: 100%; width: auto"
                             />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title small product-title">{{ product.product_name }}</h5>
-                            <p class="fw-bold fs-2 text-primary-btc">{{ price }},<span class="fs-6">000</span></p>
+                            <p class="fw-bold fs-2 text-primary-btc">{{ formatCurrency(product.product_price) }}<span class="fs-6">000</span></p>
                             <a
                                 :href="`/products/${product.product_slug}`"
                                 role="button"
                                 class="product__link text-decoration-none position-absolute top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                                ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                            ></a>
+                            >
+                                <i class="fa-solid fa-arrow-right" style="color: currentColor"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -32,38 +33,24 @@
 </template>
 
 <script setup>
-import {useRoute} from "vue-router";
-import {useFetch} from "nuxt/app";
-import {createError} from "h3";
+import {defineProps} from "vue";
 
-const router = useRoute();
-const id = router.params.id;
-const config = useRuntimeConfig();
-
-// Using useFetch
-const url = `/v1/api/collections/${id}`;
-
-const {data: collections} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
-    headers: {
-        "x-api-key": `${config.public.x_api_key}`, // use from runtimeConfig
-        "Content-Type": "application/json",
+defineProps({
+    collectionData: {
+        type: Array,
+        default: () => [],
     },
 });
 
-if (collections.value && collections.value.status !== 200) {
-    throw createError({statusCode: 404, statusMessage: "Collection not Found", fatal: true});
-}
+const formatCurrency = (value) => {
+    // Chuyển giá trị thành chuỗi có định dạng phân cách hàng nghìn
+    let formattedValue = value.toLocaleString("en-US");
 
-const collectionData = collections.value.metadata;
+    // Cắt bỏ 3 ký tự cuối cùng
+    formattedValue = formattedValue.slice(0, -3);
 
-let price;
-const collectionPrice = () => {
-    for (let data of collectionData) {
-        price = data.product_price.toString().slice(0, -3);
-    }
-    return price;
+    return formattedValue;
 };
-collectionPrice();
 </script>
 
 <style scoped>
@@ -82,6 +69,7 @@ collectionPrice();
 .product-slider:hover .product__link {
     display: inline-flex !important;
 }
+
 .product-slider .product__link {
     width: 50px;
     height: 50px;
@@ -91,15 +79,11 @@ collectionPrice();
     right: 0;
 }
 
-.product-img {
-    background-position: center;
-}
-
 .product-title {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* Giới hạn số dòng */
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis; /* Thêm dấu ... sau khi văn bản bị cắt */
+    text-overflow: ellipsis;
 }
 </style>
