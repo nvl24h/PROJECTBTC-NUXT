@@ -20,6 +20,7 @@
                             <!-- form search -->
                             <form action="" class="ms-auto w-75">
                                 <input
+                                    v-model="searchQuery"
                                     class="form-control rounded-pill border-2 border-primary-btc search-product"
                                     type="text"
                                     name=""
@@ -34,10 +35,12 @@
                                             v-for="item in searchResults"
                                             :key="item.id"
                                         >
-                                            <img class="search__item-img" :src="item.image" :alt="item.name" height="40px" />
-                                            <a :href="`/products/${item.id}`" class="search__link text-decoration-none text-primary-btc fs-6 lh-2">{{
-                                                item.name
-                                            }}</a>
+                                            <img class="search__item-img" :src="item.product_thumb" :alt="item.product_name" height="40px" />
+                                            <a
+                                                :href="`/products/${item.product_slug}`"
+                                                class="search__link text-decoration-none text-primary-btc fs-6 lh-2"
+                                                >{{ item.product_name }}</a
+                                            >
                                         </li>
                                     </ul>
                                 </div>
@@ -97,27 +100,59 @@
 </template>
 
 <script setup>
-import {contacts, socials, logo, categories} from "@/utils";
+import {ref, watch} from "vue";
+import {useRuntimeConfig} from "nuxt/app";
+import debounce from "lodash/debounce";
 
-// Fetch
-const searchResults = [
-    {
-        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
-        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
-    },
-    {
-        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
-        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
-    },
-    {
-        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
-        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
-    },
-    {
-        name: "Rượu vang đỏ Mỹ Barrel Bomb Proprietary Red Blend",
-        image: "https://product.hstatic.net/200000511439/product/1_2000520157eb40ff9845db8974ef4594_large.png",
-    },
-];
+// Thiết lập cấu hình và các biến
+const config = useRuntimeConfig();
+const searchQuery = ref(""); // Biến lưu trữ giá trị input từ người dùng
+const searchResults = ref([]); // Biến lưu trữ kết quả tìm kiếm
+
+// Hàm fetch sản phẩm từ API
+const fetchProducts = async (query) => {
+    if (query.length > 4) {
+        try {
+            // Chuyển đổi query thành dạng URL an toàn
+            const encodedQuery = encodeURIComponent(query);
+
+            // Gửi yêu cầu tới API để tìm kiếm sản phẩm
+            const response = await fetch(`${config.public.apiBaseUrl}/v1/api/products/search/${encodedQuery}`, {
+                headers: {
+                    "x-api-key": config.public.x_api_key,
+                    "Content-Type": "application/json",
+                },
+            });
+
+            // Kiểm tra nếu phản hồi không thành công
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // Cập nhật kết quả tìm kiếm từ dữ liệu nhận được
+            searchResults.value = data.metadata || [];
+        } catch (error) {
+            console.error("Lỗi khi tìm kiếm sản phẩm:", error.message);
+            // Đặt kết quả tìm kiếm thành rỗng nếu có lỗi xảy ra
+            searchResults.value = [];
+        }
+    } else {
+        // Nếu query quá ngắn (<=3 ký tự), không thực hiện tìm kiếm và xóa kết quả hiện tại
+        searchResults.value = [];
+    }
+};
+
+// Sử dụng debounce để giảm số lần gọi API khi người dùng nhập nhanh
+const debouncedFetchProducts = debounce((query) => {
+    fetchProducts(query);
+}, 300); // Độ trễ 300ms
+
+// Theo dõi sự thay đổi của giá trị input tìm kiếm và gọi hàm debounce
+watch(searchQuery, (newQuery) => {
+    debouncedFetchProducts(newQuery);
+});
 </script>
 
 <style>
