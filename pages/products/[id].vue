@@ -95,7 +95,7 @@
     <section class="products py-5">
         <div class="container">
             <h2 class="text-start mb-5">Sản phẩm vừa xem</h2>
-            <ProductSlider :productsSales="productsSale" />
+            <RecentlyViewed />
         </div>
     </section>
 </template>
@@ -103,10 +103,16 @@
 <script setup>
 import {socials} from "@/utils";
 import {useRoute, useAsyncData} from "nuxt/app";
+import {addToRecentlyViewed} from "@/utils/recentlyViewed";
+import {ref, onMounted, watch} from "vue";
 
 const route = useRoute();
 const id = route.params.id;
 const config = useRuntimeConfig();
+
+const productData = ref({});
+const productImage = ref([]);
+const productAttributes = ref([]);
 
 // Fetch product data
 const {data: product, error} = await useAsyncData(() =>
@@ -123,31 +129,42 @@ if (error.value) {
     throw createError({statusCode: 404, statusMessage: "Product not found", fatal: true});
 }
 
-const productData = product.value.metadata;
-const productImage = [productData.product_thumb, ...productData.product_gallery];
-const productAttributes = [
-    {label: "Giống nho", value: productData.product_attributes.type},
-    {label: "Dung tích", value: productData.product_attributes.size},
-    {label: "Vùng", value: productData.product_attributes.region},
-    {label: "Niên vụ", value: productData.product_attributes.current_vintage},
-    {label: "Nồng độ", value: productData.product_attributes.alcohol_volume},
-    {label: "Quốc gia", value: productData.product_attributes.country},
-    {label: "Thương hiệu", value: productData.product_attributes.brand_name},
-    {label: "Nhiệt độ bảo quản", value: productData.product_attributes.storage_Temp},
+// Cập nhật thông tin sản phẩm sau khi fetch thành công
+productData.value = product.value.metadata;
+productImage.value = [productData.value.product_thumb, ...productData.value.product_gallery];
+productAttributes.value = [
+    {label: "Giống nho", value: productData.value.product_attributes.type},
+    {label: "Dung tích", value: productData.value.product_attributes.size},
+    {label: "Vùng", value: productData.value.product_attributes.region},
+    {label: "Niên vụ", value: productData.value.product_attributes.current_vintage},
+    {label: "Nồng độ", value: productData.value.product_attributes.alcohol_volume},
+    {label: "Quốc gia", value: productData.value.product_attributes.country},
+    {label: "Thương hiệu", value: productData.value.product_attributes.brand_name},
+    {label: "Nhiệt độ bảo quản", value: productData.value.product_attributes.storage_Temp},
 ];
 
-// Fetch products for "Sản phẩm vừa xem"
-let productsSale;
-const {data: products} = await useAsyncData(() =>
-    $fetch("/v1/api/collections/vang-do", {
-        baseURL: config.public.apiBaseUrl,
-        headers: {
-            "x-api-key": config.public.x_api_key,
-            "Content-Type": "application/json",
-        },
-    })
+// Sản phẩm vừa xem
+const productsSale = ref([]);
+
+// Cập nhật sản phẩm hiện tại vào danh sách sản phẩm đã xem gần đây và cập nhật danh sách sản phẩm đã xem
+const updateRecentlyViewed = () => {
+    addToRecentlyViewed({
+        id: productData.value._id,
+        product_name: productData.value.product_name,
+        product_thumb: productData.value.product_thumb,
+        product_slug: productData.value.product_slug,
+        product_price: productData.value.product_price,
+    });
+};
+
+// Gọi hàm updateRecentlyViewed khi component được mount và khi sản phẩm thay đổi
+watch(
+    () => route.params.id,
+    () => {
+        updateRecentlyViewed();
+    },
+    {immediate: true}
 );
-productsSale = products.value.metadata;
 
 // Format currency function
 const formatCurrency = (value) => {

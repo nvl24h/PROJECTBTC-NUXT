@@ -20,17 +20,18 @@
         :modules="modules"
         class="mySwiper"
     >
-        <SwiperSlide v-for="product in products">
+        <SwiperSlide v-for="product in products" :key="product.id">
             <div class="card rounded-4 product-slider position-relative" style="max-width: 18rem">
                 <img :src="product.product_thumb" class="card-img-top pt-4" alt="..." loading="lazy" />
                 <div class="card-body">
                     <h5 class="card-title fs-6">{{ product.product_name }}</h5>
-                    <p class="fw-bold fs-1 text-primary-btc">{{ formatCurrency(product.product_price) }}<span class="fs-6">000</span></p>
+                    <p class="fw-bold fs-1 text-primary-btc">{{ formatCurrency(product.product_price) }}</p>
                     <a
                         class="product__link position-absolute text-decoration-none top-50 start-50 translate-middle text-white z-3 justify-content-center align-items-center d-none"
-                        :href="`products/${product.product_slug}`"
-                        ><i class="fa-solid fa-arrow-right" style="color: currentColor"></i
-                    ></a>
+                        :href="`/products/${product.product_slug}`"
+                    >
+                        <i class="fa-solid fa-arrow-right" style="color: currentColor"></i>
+                    </a>
                 </div>
             </div>
         </SwiperSlide>
@@ -48,31 +49,36 @@ import "swiper/css/navigation";
 // import required modules
 import {Navigation} from "swiper/modules";
 
+import {onMounted, ref} from "vue";
+import {getRecentlyViewed} from "@/utils/recentlyViewed"; // Import hàm getRecentlyViewed từ module
+
 export default {
     components: {
         Swiper,
         SwiperSlide,
     },
 
-    props: {
-        productsSales: {
-            type: Array,
-            default: [],
-        },
-    },
+    setup() {
+        const modules = [Navigation];
+        const products = ref([]);
 
-    async setup(props) {
+        // Lấy sản phẩm từ localStorage khi component được mount
+        onMounted(async () => {
+            products.value = await getRecentlyViewed();
+        });
+
+        // Format currency function
         const formatCurrency = (value) => {
-            let formattedValue = value.toLocaleString("en-US");
-            formattedValue = formattedValue.slice(0, -3);
-
-            return formattedValue;
+            return value.toLocaleString("vi-VN", {
+                style: "currency",
+                currency: "VND",
+            });
         };
 
         return {
-            products: props.productsSales,
-            formatCurrency: formatCurrency,
-            modules: [Navigation],
+            modules,
+            products,
+            formatCurrency,
         };
     },
 };

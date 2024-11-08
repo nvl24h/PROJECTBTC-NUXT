@@ -280,23 +280,16 @@ const config = useRuntimeConfig();
 
 // Using useFetch
 let productsSale;
-const productDataApi = async () => {
-    const url = "/v1/api/collections/vang-do";
-    const {data: products} = await useFetch(`${config.public.apiBaseUrl}${url}`, {
+const {data: products} = await useAsyncData(() =>
+    $fetch("/v1/api/collections/ban-chay", {
+        baseURL: config.public.apiBaseUrl,
         headers: {
-            "x-api-key": `${config.public.x_api_key}`, // use form runtimeConfig
+            "x-api-key": config.public.x_api_key,
             "Content-Type": "application/json",
         },
-    });
-
-    if (products.value.status !== 200) {
-        throw createError({statusCode: 404, statusMessage: "Collection not Fount", fatal: true});
-    }
-
-    productsSale = products.value.metadata;
-    return productsSale;
-};
-productDataApi();
+    })
+);
+productsSale = products.value.metadata;
 </script>
 
 <style>

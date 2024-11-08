@@ -27,13 +27,13 @@
                 <nav aria-label="Pagination Navigation">
                     <ul class="pagination">
                         <li class="page-item" :class="{disabled: currentPage === 1}">
-                            <a class="page-link" :href="`${id}/${currentPage - 1}`" aria-disabled="currentPage === 1">Previous</a>
+                            <a class="page-link" :href="`${id}?page=${currentPage - 1}`" aria-disabled="currentPage === 1">Previous</a>
                         </li>
                         <li v-for="page in totalPages" :key="page" class="page-item" :class="{active: page === currentPage}">
-                            <a class="page-link" :href="`${id}/${page}`">{{ page }}</a>
+                            <a class="page-link" :href="`${id}?page=${page}`">{{ page }}</a>
                         </li>
                         <li class="page-item" :class="{disabled: currentPage === totalPages}">
-                            <a class="page-link" :href="`${id}/${currentPage + 1}`" aria-disabled="currentPage === totalPages">Next</a>
+                            <a class="page-link" :href="`${id}?page=${currentPage + 1}`" aria-disabled="currentPage === totalPages">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -51,13 +51,14 @@ import {useFetch, useError} from "#imports";
 
 const route = useRoute();
 const id = route.params.id;
+const page = route.query.page || 1;
 
 const config = useRuntimeConfig();
 let products = ref([]);
 let currentPage = ref(1);
 let totalPages = 3;
 
-const {data: productsData, error} = await useFetch(`${config.public.apiBaseUrl}/v1/api/collections/${id}`, {
+const {data: productsData, error} = await useFetch(`${config.public.apiBaseUrl}/v1/api/collections/${id}?page=${page}`, {
     headers: {
         "x-api-key": config.public.x_api_key,
         "Content-Type": "application/json",
