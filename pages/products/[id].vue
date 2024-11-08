@@ -143,9 +143,6 @@ productAttributes.value = [
     {label: "Nhiệt độ bảo quản", value: productData.value.product_attributes.storage_Temp},
 ];
 
-// Sản phẩm vừa xem
-const productsSale = ref([]);
-
 // Cập nhật sản phẩm hiện tại vào danh sách sản phẩm đã xem gần đây và cập nhật danh sách sản phẩm đã xem
 const updateRecentlyViewed = () => {
     addToRecentlyViewed({
