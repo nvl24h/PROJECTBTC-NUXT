@@ -12,64 +12,22 @@
                     <li class="breadcrumb-item">
                         <NuxtLink to="/" class="text-primary-btc text-decoration-none">Home</NuxtLink>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    <li class="breadcrumb-item active" aria-current="page">collections</li>
                     <li class="breadcrumb-item active" aria-current="page">{{ id }}</li>
                 </ol>
             </nav>
         </div>
     </section>
 
-    <Product :collectionData="products" />
-
-    <section class="py-3">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <nav aria-label="Pagination Navigation">
-                    <ul class="pagination">
-                        <li class="page-item" :class="{disabled: currentPage === 1}">
-                            <a class="page-link" :href="`${id}?page=${currentPage - 1}`" aria-disabled="currentPage === 1">Previous</a>
-                        </li>
-                        <li v-for="page in totalPages" :key="page" class="page-item" :class="{active: page === currentPage}">
-                            <a class="page-link" :href="`${id}?page=${page}`">{{ page }}</a>
-                        </li>
-                        <li class="page-item" :class="{disabled: currentPage === totalPages}">
-                            <a class="page-link" :href="`${id}?page=${currentPage + 1}`" aria-disabled="currentPage === totalPages">Next</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </section>
+    <Product />
 
     <Warehouse />
 </template>
 
 <script setup>
-import {ref} from "vue";
 import {useRoute} from "vue-router";
-import {useFetch, useError} from "#imports";
-
 const route = useRoute();
 const id = route.params.id;
-const page = route.query.page || 1;
-
-const config = useRuntimeConfig();
-let products = ref([]);
-let currentPage = ref(1);
-let totalPages = 3;
-
-const {data: productsData, error} = await useFetch(`${config.public.apiBaseUrl}/v1/api/collections/${id}?page=${page}`, {
-    headers: {
-        "x-api-key": config.public.x_api_key,
-        "Content-Type": "application/json",
-    },
-});
-
-if (error.value || productsData.value.status !== 200) {
-    useError({statusCode: 404, statusMessage: "Collection not Found"});
-} else {
-    products.value = productsData.value.metadata;
-}
 </script>
 
 <style scoped>

@@ -155,7 +155,7 @@ watch(searchQuery, (newQuery) => {
 });
 </script>
 
-<style>
+<style scoped>
 .header-social a:hover {
     background-color: #48c7f0 !important;
     color: #fffcff !important;
